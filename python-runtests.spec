@@ -13,8 +13,7 @@ BuildArch:      noarch
  
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(coverage)
-BuildRequires:  python3dist(mpi4py)
-BuildRequires:  python3dist(mpi4py)
+BuildRequires:  python3-mpi4py-runtime
 BuildRequires:  python3dist(pytest)
 BuildRequires:  python3dist(setuptools)
 
@@ -26,8 +25,7 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
  
 Requires:       python3dist(coverage)
-Requires:       python3dist(mpi4py)
-Requires:       python3dist(mpi4py)
+Suggests:       python3-mpi4py-runtime
 Requires:       python3dist(pytest)
 %description -n python3-%{pypi_name}
 
@@ -53,5 +51,5 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %changelog
-* Mon Mar 25 2019 Mike DePaulo <mikedep333@redhat.com> - 0.0.27-1
+* Fri Mar 22 2019 Mike DePaulo <mikedep333@redhat.com> - 0.0.27-1
 - Initial package.
